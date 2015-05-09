@@ -1,7 +1,6 @@
 package controllers;
 
 import models.Login;
-import models.Register;
 import models.User;
 import play.*;
 import play.data.Form;
@@ -17,6 +16,8 @@ import java.util.HashMap;
 
 public class Application extends Controller {
 
+    // default page, falls sichs wer anschaun will,
+    // steht der grundaufbau von play drin
     public static Result playHelp() {
         return ok(index.render("Überschrift lol"));
     }
@@ -32,6 +33,25 @@ public class Application extends Controller {
     }
 
     @play.db.jpa.Transactional
+    public static Result register() {
+        Form<User> regForm = Form.form(User.class).bindFromRequest();
+
+        try {
+            if (regForm.hasErrors()) {
+                return badRequest(registration.render(regForm));
+            }
+        } catch (Exception e) {
+            return badRequest(registration.render(regForm));
+        }
+
+        User user = regForm.get();
+
+        saveUser(user);
+
+        return redirect("login");
+    }
+
+    @play.db.jpa.Transactional
     public static Result authenticate() {
         Form<Login> loginForm;
         loginForm = Form.form(Login.class).bindFromRequest();
@@ -41,7 +61,7 @@ public class Application extends Controller {
         } else {
             session().clear();
             session("username", loginForm.get().username);
-            return redirect("registration");
+            return redirect("jeopardy");
         }
     }
 

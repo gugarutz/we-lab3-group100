@@ -18,3 +18,4 @@ POST        /login               controllers.Application.authenticate()
 GET         /logout              controllers.SecureArea.logout()
 
 GET         /registration        controllers.Application.registration()
+POST        /register            controllers.Application.register()
