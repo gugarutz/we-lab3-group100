@@ -20,4 +20,7 @@ GET         /logout              controllers.SecureArea.logout()
 GET         /registration        controllers.Application.registration()
 POST        /register            controllers.Application.register()
 
-POST 	    /changelan		     controllers.Application.changeLanguage()
+#Game
+POST        /question            controllers.SecureArea.question()
+GET         /answer              controllers.SecureArea.answer()
+GET         /winner              controllers.SecureArea.winner()
