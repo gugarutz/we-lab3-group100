@@ -1,5 +1,4 @@
 
-view.authentication.selectlang=Select language
 view.authentication.gotologin=Go to login
 view.authentication.user=Username
 view.authentication.password=Password
@@ -8,7 +7,7 @@ view.authentication.loginerror= Wrong combination of username and password
 view.authentication.registerhint=Not registered?
 view.authentication.toreg=Go to registration
 view.authentication.toreg.hover=Click here to register
-view.authentication.changelan=Change language
+
 
 view.registration.titel="Business Informatics Group Jeopardy! - Register"
 view.registration.gotoreg=Go to registration
@@ -40,4 +39,26 @@ view.jeopardy.leadingPlayer=Leading Player
 view.jeopardy.logout = Log out
 view.jeopardy.playername = Player name
 view.jeopardy.score=Score
-view.jeopardy.questionselection = Question selection
+view.jeopardy.you=you
+view.jeopardy.questionchoose = Question selection
+view.jeopardy.secondplayer=Second Player
+view.jeopardy.question=Question
+view.jeopardy.correctAnswer=You answered correct
+view.jeopardy.wrongAnswer2 =You answered wrong
+view.jeopardy.correctAnswer2= answered correct
+view.jeopardy.wrongAnswer= answered wrong
+view.jeopardy.category=Category
+view.jeopardy.lastgameinfo=Last Game
+view.jeopardy.lastgame=Last Game: Never
+view.jeopardy.waehlen=choose
+view.jeopardy.hat=has
+view.jeopardy.gewaehlt=choosen
+view.jeopardy.fuer= for
+
+view.question.questionanswer = Question answering
+view.question.answer=submit
+view.question.remainingtime=remaining time
+
+view.winner.jumptowinnerview= Click here to jump to winner view
+view.winner.winner= Winner
+view.winner.newgame= new game

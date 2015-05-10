@@ -1,3 +1,6 @@
+import play.PlayJava
+import play.twirl.sbt.Import.TwirlKeys
+
 name := """we-lab3-group100"""
 
 version := "1.0-SNAPSHOT"

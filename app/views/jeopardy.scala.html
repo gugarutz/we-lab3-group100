@@ -4,14 +4,14 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Business Informatics Group Jeopardy! - Fragenauswahl</title>
+        <title>Business Informatics Group Jeopardy! - @Messages("view.jeopardy.questionchoose")</title>
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/base.css")" />
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/screen.css")" />
         <script src="@routes.Assets.at("javascripts/jquery.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascripts/framework.js")" type="text/javascript"></script>
     </head>
     <body id="selection-page">
-        <a class="accessibility" href="#question-selection">Zur Fragenauswahl springen</a>
+        <a class="accessibility" href="#question-selection">@Messages("view.jeopardy.jump")</a>
             <!-- Header -->
         <header role="banner" aria-labelledby="bannerheading">
             <h1 id="bannerheading">
@@ -21,10 +21,10 @@
 
             <!-- Navigation -->
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">Navigation</h2>
+            <h2 id="navheading" class="accessibility">@Messages("view.jeopardy.navi")</h2>
             <ul>
-                <li><a class="orangelink navigationlink" id="logoutlink" title="Klicke hier um dich abzumelden" href="@routes.SecureArea.logout()" accesskey="l">
-                    Abmelden</a></li>
+                <li><a class="orangelink navigationlink" id="logoutlink" title="@Messages("view.jeopardy.abmelden.hover")" href="@routes.SecureArea.logout()" accesskey="l">
+                    @Messages("view.jeopardy.logout")</a></li>
             </ul>
         </nav>
 
@@ -32,36 +32,36 @@
         <div role="main">
                 <!-- info -->
             <section id="gameinfo" aria-labelledby="gameinfoinfoheading">
-                <h2 id="gameinfoinfoheading" class="accessibility">Spielinformationen</h2>
+                <h2 id="gameinfoinfoheading" class="accessibility">@Messages("view.jeopardy.playerinfo")</h2>
                 <section id="firstplayer" class="playerinfo leader" aria-labelledby="firstplayerheading">
-                    <h3 id="firstplayerheading" class="accessibility">Führender Spieler</h3>
+                    <h3 id="firstplayerheading" class="accessibility">@Messages("view.jeopardy.leadingPlayer")</h3>
                     <img class="avatar" src="@routes.Assets.at("images/avatar/" + gameStats.getGame().getHuman().getAvatar().getImageHead())" alt="Spieler-Avatar @gameStats.getGame().getHuman().getAvatar().getName()" />
                     <table>
                         <tr>
                             <th class="accessibility">@gameStats.getGame().getHuman().getName()</th>
-                            <td class="playername">@gameStats.getGame().getHuman().getAvatar().getName() (Du)</td>
+                            <td class="playername">@gameStats.getGame().getHuman().getAvatar().getName() (@Messages("view.jeopardy.you"))</td>
                         </tr>
                         <tr>
-                            <th class="accessibility">Spielerpunkte</th>
+                            <th class="accessibility">@Messages("view.jeopardy.score")</th>
                             <td class="playerpoints">@gameStats.getGame().getHumanPlayer().getProfit() €</td>
                         </tr>
                     </table>
                 </section>
                 <section id="secondplayer" class="playerinfo" aria-labelledby="secondplayerheading">
-                    <h3 id="secondplayerheading" class="accessibility">Zweiter Spieler</h3>
+                    <h3 id="secondplayerheading" class="accessibility">@Messages("view.jeopardy.secondplayer")</h3>
                     <img class="avatar" src="@routes.Assets.at("images/avatar/" + gameStats.getGame().getMarvin().getAvatar().getImageHead())" alt="Spieler-Avatar @gameStats.getGame().getMarvin().getAvatar().getName()" />
                     <table>
                         <tr>
-                            <th class="accessibility">Spielername</th>
+                            <th class="accessibility">@Messages("view.jeopardy.playername")</th>
                             <td class="playername">@gameStats.getGame().getMarvin().getName()</td>
                         </tr>
                         <tr>
-                            <th class="accessibility">Spielerpunkte</th>
+                            <th class="accessibility">@Messages("view.jeopardy.score")</th>
                             <td class="playerpoints">@gameStats.getGame().getMarvinPlayer().getProfit() €</td>
                         </tr>
                     </table>
                 </section>
-                <p id="round">Fragen: @gameStats.getCurrentRound() / @gameStats.getGame().getMaxQuestions()</p>
+                <p id="round">@Messages("view.jeopardy.question"): @gameStats.getCurrentRound() / @gameStats.getGame().getMaxQuestions()</p>
             </section>
 
                 <!-- Question -->
@@ -72,37 +72,37 @@
 
                     @if(gameStats.getLastHumanQuestion().isCorrect()) {
                         <p class="user-info positive-change positive-change">
-                            Du hast richtig geantwortet: @gameStats.getGame().getHumanPlayer().getLatestProfitChange() &euro;
+                            @Messages("view.jeopardy.correctAnswer") @gameStats.getGame().getHumanPlayer().getLatestProfitChange() &euro;
                         </p>
                     } else {
                         <p class="user-info negative-change">
-                            Du hast falsch geantwortet: @gameStats.getGame().getHumanPlayer().getLatestProfitChange() &euro;
+                            @Messages("view.jeopardy.wrongAnswer2") @gameStats.getGame().getHumanPlayer().getLatestProfitChange() &euro;
                         </p>
                     }
 
                     @if(gameStats.getLastMarvinQuestion().isCorrect()) {
                         <p class="user-info positive-change">
                             @gameStats.getGame().getMarvin().getName()
-                            hat richtig geantwortet: @gameStats.getGame().getMarvinPlayer().getLatestProfitChange() &euro;
+                            @Messages("view.jeopardy.correctAnswer2") @gameStats.getGame().getMarvinPlayer().getLatestProfitChange() &euro;
                         </p>
                     } else {
                         <p class="user-info negative-change">
                             @gameStats.getGame().getMarvin().getName()
-                            hat falsch geantwortet: @gameStats.getGame().getMarvinPlayer().getLatestProfitChange() &euro;
+                            @Messages("view.jeopardy.wrongAnswer") @gameStats.getGame().getMarvinPlayer().getLatestProfitChange() &euro;
                         </p>
                     }
 
                     <p class="user-info">
                         @gameStats.getGame().getMarvin().getName()
-                        hat @gameStats.getLastMarvinQuestion().getQuestion().getCategory().getName() für @gameStats.getLastMarvinQuestion().getQuestion().getValue() &euro; gewählt.
+                        @Messages("view.jeopardy.hat") @gameStats.getLastMarvinQuestion().getQuestion().getCategory().getName() @Messages("view.jeopardy.fuer") @gameStats.getLastMarvinQuestion().getQuestion().getValue() &euro; @Messages("view.jeopardy.gewaehlt").
                     </p>
                 }
                 @helper.form(action = routes.SecureArea.question()) {
                     <fieldset>
-                        <legend class="accessibility">Fragenauswahl</legend>
+                        <legend class="accessibility">@Messages("view.jeopardy.questionchoose")</legend>
                         @for(c <- gameStats.getGame().getCategories()) {
                             <section class="questioncategory" aria-labelledby="@c.getName()heading">
-                                <h3 id="@c.getName()heading" class="tile category-title"><span class="accessibility">Kategorie: </span> @c.getName()</h3>
+                                <h3 id="@c.getName()heading" class="tile category-title"><span class="accessibility">@Messages("view.jeopardy.category") </span> @c.getName()</h3>
 
                                 <ol class="category_questions">
                                 @for(q <- c.getQuestions()) {
@@ -112,13 +112,13 @@
                             </section>
                         }
                     </fieldset>
-                    <input class="greenlink formlink clickable" name="question_submit" id="next" type="submit" value="wählen" accesskey="s" />
+                    <input class="greenlink formlink clickable" name="question_submit" id="next" type="submit" value="@Messages("view.jeopardy.waehlen")" accesskey="s" />
                 }
             </section>
 
             <section id="lastgame" aria-labelledby="lastgameheading">
-                <h2 id="lastgameheading" class="accessibility">Letztes Spielinfo</h2>
-                <p>Letztes Spiel: Nie</p>
+                <h2 id="lastgameheading" class="accessibility">@Messages("view.jeopardy.lastgameinfo")</h2>
+                <p> @Messages("view.jeopardy.lastgame")</p>
             </section>
         </div>
 
@@ -135,7 +135,7 @@
 	                var lastGameMillis = parseInt(localStorage['lastGame'])
 	                if(!isNaN(parseInt(localStorage['lastGame']))){
 	                    var lastGame = new Date(lastGameMillis);
-	                	$("#lastgame p").replaceWith('<p>Letztes Spiel: <time datetime="'
+	                	$("#lastgame p").replaceWith('<p>@Messages("view.jeopardy.lastgameinfo")<time datetime="'
 	                			+ lastGame.toUTCString()
 	                			+ '">'
 	                			+ lastGame.toLocaleString()

@@ -2,8 +2,6 @@ package controllers;
 
 import at.ac.tuwien.big.we15.lab2.api.impl.PlayJeopardyFactory;
 import models.*;
-import models.User;
-import play.*;
 import play.cache.Cache;
 import play.data.Form;
 import play.db.jpa.JPA;
