@@ -30,3 +30,14 @@ view.registration.username=Username
 view.registration.username.hover=The username takes at least 4 letters to a maximum of 8.
 view.registration.password.hover=The password takes at least 4 letters to a maximum of 8.
 view.registration.required=Fields marked with "*" mandatory.
+
+
+view.jeopardy.jump=Go to Question selection
+view.jeopardy.navi=Navigation
+view.jeopardy.abmelden.hover=Click here to logout
+view.jeopardy.playerinfo=Player info
+view.jeopardy.leadingPlayer=Leading Player
+view.jeopardy.logout = Log out
+view.jeopardy.playername = Player name
+view.jeopardy.score=Score
+view.jeopardy.questionselection = Question selection
