@@ -1,0 +1,12 @@
+
+view.authentication.selectlang=Select language
+view.authentication.gotologin=Go to login
+view.authentication.user=Username
+view.authentication.password=Password
+view.authentication.submit=Login
+view.authentication.loginerror= Wrong combination of username and password
+view.authentication.registerhint=Not registered?
+view.authentication.toreg=Go to registration
+view.authentication.toreg.hover=Click here to register
+view.authentication.changelan=Change language
+

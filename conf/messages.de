@@ -1,0 +1,14 @@
+
+view.authentication.gotologin=Zum Login springen
+view.authentication.user=Benutzername
+view.authentication.password=Passwort
+view.authentication.submit=Anmelden
+view.authentication.loginerror=Ungültige kominbation aus Benutzername und Passwort
+view.authentication.registerhint=Nicht registriert?
+view.authentication.toreg=Zur Registrierung
+view.authentication.toreg.hover=Klicke hier um dich zu registrieren
+view.authentication.changelan=Sprache ändern
+view.authentication.selectlang=Sprache wählen
+
+
+

@@ -2,12 +2,14 @@ package controllers;
 
 import models.Login;
 import models.User;
+import models.Language;
 import play.*;
 import play.data.Form;
 import play.db.jpa.JPA;
 import play.mvc.*;
 import play.api.data.*;
 import play.api.data.Forms.*;
+import play.Routes;
 
 import views.html.*;
 
@@ -31,6 +33,26 @@ public class Application extends Controller {
 
         return ok(authentication.render(Form.form(Login.class)));
     }
+
+    public static Result changeLanguage()
+    {
+        Form<Language> langSelectForm;
+        langSelectForm = Form.form(Language.class).bindFromRequest();
+
+        request().getQueryString("language");
+
+        if(langSelectForm.get().language.equals("en") || langSelectForm.get().language.equals("de"))
+        {
+            changeLang(langSelectForm.get().language);
+            session("lan", langSelectForm.get().language);
+            return ok(authentication.render(Form.form(Login.class)));
+        }
+
+        return badRequest(authentication.render(Form.form(Login.class)));
+    }
+
+
+
 
     @play.db.jpa.Transactional
     public static Result register() {

@@ -11,8 +11,8 @@
     </head>
 
     <body id="login-page">
-        <a class="accessibility" href="#login">Zum Login springen</a>
-        <a class="accessibility" title="Klicke hier um dich zu registrieren" href="@routes.Application.registration()" accesskey="r">
+        <a class="accessibility" href="#login">@Messages("view.authentication.gotologin")</a>
+        <a class="accessibility" title="@Messages("view.authentication.toreg")" href="@routes.Application.registration()" accesskey="r">
             Registrieren</a>
             <!-- Header -->
         <header role="banner" aria-labelledby="bannerheading">
@@ -21,25 +21,34 @@
             </h1>
         </header>
 
-            <!-- Content -->
+        @helper.form(action=routes.Application.changeLanguage()){
+            <p >@Messages("view.authentication.selectlang")</p>
+            <select id="language" name="language">
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+            </select>
+            <input type="submit" name="changeLan" id="changeLan" class="greenlink formlink clickable" value="@Messages("view.authentication.changelan")" />
+                }
+
+        <!-- Content -->
         <div role="main">
             <section id="login" aria-labelledby="loginheading">
                 <h2 id="loginheading" class="accessibility">Login</h2>
                 @helper.form(action = routes.Application.authenticate()) {
                     <fieldset>
                         <legend id="logindata">Login</legend>
-                        <label for="username">Benutzername:</label>
+                        <label for="username">@Messages("view.authentication.user"):</label>
                         <input name="username" id="username" type="text" required="required"/>
-                        <label for="password">Passwort:</label>
+                        <label for="password">@Messages("view.authentication.password"):</label>
                         <input name="password" id="password" type="password" required="required"/>
-                        <input name="login" id="loginsubmit" class="greenlink formlink clickable" type="submit" value="Anmelden"/>
+                        <input name="login" id="loginsubmit" class="greenlink formlink clickable" type="submit" value="@Messages("view.authentication.submit")"/>
                     </fieldset>
                 }
 
                     <!-- "message" wird im intellij als fehler angezeigt ist aber gültig und funktioniert.. -->
                 @if(form.hasGlobalErrors) {
-                    <p>
-                    @form.globalError.message
+                    <p align="center">
+                    @Messages("view.authentication.loginerror")
                     </p>
                 }
                     <!-- "flash" wird im intellij als fehler angezeigt ist aber gültig und funktioniert.. -->
@@ -52,9 +61,8 @@
                 <!-- Register section -->
             <section id="registerforward" aria-labelledby="registerheading">
                 <h2 id="registerheading" class="accessibility">Registrierung</h2>
-                <p id="registerhint">Nicht registriert?</p>
-                <a class="contentlink orangelink" title="Klicke hier um dich zu registrieren" href="@routes.Application.registration()" accesskey="r">
-                    Zur Registrierung</a>
+                <p id="registerhint">@Messages("view.authentication.registerhint")</p>
+                <a class="contentlink orangelink" title="@Messages("view.authentication.toreg.hover")" href="@routes.Application.registration()" accesskey="r"> @Messages("view.authentication.toreg")</a>
             </section>
         </div>
 
