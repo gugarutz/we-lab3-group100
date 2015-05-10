@@ -25,34 +25,12 @@ public class Application extends Controller {
     }
 
     public static Result registration() {
-
         return ok(registration.render(Form.form(User.class)));
     }
 
     public static Result login() {
-
         return ok(authentication.render(Form.form(Login.class)));
     }
-
-    public static Result changeLanguage()
-    {
-        Form<Language> langSelectForm;
-        langSelectForm = Form.form(Language.class).bindFromRequest();
-
-        request().getQueryString("language");
-
-        if(langSelectForm.get().language.equals("en") || langSelectForm.get().language.equals("de"))
-        {
-            changeLang(langSelectForm.get().language);
-            session("lan", langSelectForm.get().language);
-            return ok(authentication.render(Form.form(Login.class)));
-        }
-
-        return badRequest(authentication.render(Form.form(Login.class)));
-    }
-
-
-
 
     @play.db.jpa.Transactional
     public static Result register() {
