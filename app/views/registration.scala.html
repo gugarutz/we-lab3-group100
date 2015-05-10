@@ -4,14 +4,14 @@
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Business Informatics Group Jeopardy! - Registrieren</title>
+        <title>@Messages("view.registration.titel")</title>
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/base.css")" />
         <link rel="stylesheet" type="text/css" href="@routes.Assets.at("stylesheets/screen.css")" />
         <script src="@routes.Assets.at("javascript/jquery.js")" type="text/javascript"></script>
         <script src="@routes.Assets.at("javascript/framework.js")" type="text/javascript"></script>
     </head>
     <body id="register-page">
-        <a title="Zur Registrierung springen" class="accessibility" href="#register">Zur Registrierung springen</a>
+        <a title="Zur Registrierung springen" class="accessibility" href="#register">@Messages("view.registration.gotoreg")</a>
 
             <!-- Header -->
         <header role="banner" aria-labelledby="bannerheading">
@@ -22,43 +22,43 @@
 
             <!-- Navigation -->
         <nav role="navigation" aria-labelledby="navheading">
-            <h2 id="navheading" class="accessibility">Navigation</h2>
+            <h2 id="navheading" class="accessibility">@Messages("view.registration.navi")</h2>
             <ul>
-                <li><a class="orangelink navigationlink" id="loginlink" title="Klicke hier um dich anzumelden" href="@routes.Application.login()" accesskey="l">
-                    Anmelden</a></li>
+                <li><a class="orangelink navigationlink" id="loginlink" title="@Messages("view.registeration.login.hover")" href="@routes.Application.login()" accesskey="l">
+                    @Messages("view.registration.login")</a></li>
             </ul>
         </nav>
 
             <!-- Content -->
         <div id="register" role="main">
                 <!-- Register section -->
-            <h2 id="registerheading" class="accessibility">Registrierung</h2>
+            <h2 id="registerheading" class="accessibility">@Messages("view.registration.reg")</h2>
             @helper.form(action = routes.Application.register()) {
                 <fieldset>
-                    <legend>Persönliche Daten</legend>
-                    <label for="firstname">Vorname:</label>
+                    <legend>@Messages("view.registration.personaldata")</legend>
+                    <label for="firstname">@Messages("view.registration.firstName"):</label>
                     <input id="firstname" type="text" name="firstname"/>
 
-                    <label for="lastname">Nachname:</label>
+                    <label for="lastname">@Messages("view.registration.lastName"):</label>
                     <input id="lastname" type="text" name="lastname"/>
 
-                    <label for="birthdate">Geburtstag:</label>
+                    <label for="birthdate">@Messages("view.registration.birthDate"):</label>
                     <input id="birthdate" type="date" name="birthdate"/>
                     <div id="error_msg_birthdate" class="hide" role="alert">
-                        Verwenden Sie bitte folgendes Datumsformat: dd.mm.yyyy (z.B. 24.12.2010).</div>
+                        @Messages("view.registration.birthDate.hover"): dd.mm.yyyy (z.B. 24.12.2010).</div>
 
-                    <label>Geschlecht:</label>
+                    <label>@Messages("view.registration.gender"):</label>
                     <fieldset class="inputset">
                         <input type="radio" name="gender" id="male" value="m" checked="checked" />
-                        <label for="male">Männlich</label>
+                        <label for="male">@Messages("view.registration.male")</label>
                         <input type="radio" name="gender" id="female" value="f" />
-                        <label for="female">Weiblich</label>
+                        <label for="female">@Messages("view.registration.female")</label>
                     </fieldset>
 
 
                 </fieldset>
                 <fieldset>
-                    <legend>Spielerdaten</legend>
+                    <legend>@Messages("view.registration.playerdata")</legend>
                     <label for="avatar">Avatar:</label>
                     <select id="avatar" name="avatar">
                         <option value="aldrich-killian">Aldrich Killian</option>
@@ -105,17 +105,17 @@
                         <option value="wolverine">Wolverine</option>
                     </select>
 
-                    <label for="username">Benutzername*:</label>
+                    <label for="username">@Messages("view.registration.username")*:</label>
                     <input id="username" type="text" required="required" pattern="\w{4,8}" name="username"/>
                     <div id="error_msg_username" class="hide" role="alert">
-                        Der Benutzername muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
+                    @Messages("view.registration.username.hover")</div>
 
-                    <label for="password">Passwort*:</label>
+                    <label for="password">@Messages("view.registration.password")*:</label>
                     <input id="password" type="password" required="required" pattern="\w{4,8}" name="password"/>
                     <div id="error_msg_password" class="hide" role="alert">
-                        Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.</div>
+                    @Messages("view.registration.password.hover") </div>
                     <input class="greenlink formlink" type="submit" value="Registrieren" accesskey="s"/>
-                    <p id="requiredhint">Mit "*" gekennzeichnete Felder sind Pflichtfelder</p>
+                    <p id="requiredhint">@Messages("view.registration.required")</p>
                 </fieldset>
             }
         </div>
