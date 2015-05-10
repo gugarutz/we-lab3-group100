@@ -10,5 +10,23 @@ view.authentication.toreg.hover=Klicke hier um dich zu registrieren
 view.authentication.changelan=Sprache ändern
 view.authentication.selectlang=Sprache wählen
 
-
-
+view.registration.titel="Business Informatics Group Jeopardy! - Registrieren"
+view.registration.gotoreg=Zur Registrierung springen
+view.registration.navi=Navigation
+view.registration.login = Anmelden
+view.registeration.login.hover = Klicke hier um dich anzumelden
+view.registration.reg=Registrierung
+view.registration.personaldata=Persönliche Daten
+view.registration.firstName=Vorname
+view.registration.lastName=Nachname
+view.registration.birthDate=Geburtstag
+view.registration.birthDate.hover=Verwenden Sie bitte folgendes Datumsformat:
+view.registration.gender=Geschlecht
+view.registration.male=Männlich
+view.registration.female=Weiblich
+view.registration.username=Benutzername
+view.registration.playerdata=Spielerdaten
+view.registration.password=Passwort
+view.registration.username.hover=Der Benutzername muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.
+view.registration.password.hover=Das Passwort muss mindestens 4 Zeichen und darf maximal 8 Zeichen enthalten.
+view.registration.required=Mit "*" gekennzeichnete Felder sind Pflichtfelder
